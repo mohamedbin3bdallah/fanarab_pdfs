@@ -1,0 +1,25 @@
+ErrorDocument 403 /fanarab_pdfs/404.shtml
+ErrorDocument 404 /fanarab_pdfs/404.shtml
+RewriteEngine On    # Turn on the rewriting engine
+RewriteRule    ^dbbackup/?$    dbbackup.php    [NC,L]
+
+RewriteRule    ^gusertypes_pdf/?$    gusertypes_pdf.php    [NC,L]
+RewriteRule    ^gusers_pdf/?$    gusers_pdf.php    [NC,L]
+RewriteRule    ^gitemtypes_pdf/?$    gitemtypes_pdf.php    [NC,L]
+RewriteRule    ^gitemmodels_pdf/?$    gitemmodels_pdf.php    [NC,L]
+RewriteRule    ^gdelegates_pdf/?$    gdelegates_pdf.php    [NC,L]
+RewriteRule    ^gcustomers_pdf/?$    gcustomers_pdf.php    [NC,L]
+RewriteRule    ^gbranches_pdf/?$    gbranches_pdf.php    [NC,L]
+
+RewriteRule    ^scustomers_pdf/([A-Z]+)/([0-9]+)?$    scustomers_pdf.php?orderby=$1&no=$2    [NC,L]
+RewriteRule    ^sitems_pdf/([A-Z]+)/([0-9]+)/(.*)?$    sitems_pdf.php?orderby=$1&no=$2&store=$3    [NC,L]
+
+RewriteRule    ^joborder_pdf/([0-9]+)?$    joborder_pdf.php?id=$1    [NC,L]
+RewriteRule    ^withdrowvoucher_pdf/([0-9]+)?$    withdrowvoucher_pdf.php?id=$1    [NC,L]
+RewriteRule    ^bill_pdf/([0-9]+)?$    bill_pdf.php?id=$1    [NC,L]
+RewriteRule    ^incomes_pdf/([A-Z])/(.*)/(.*)/([0-9]+)?$    incomes_pdf.php?type=$1&from=$2&to=$3&branch=$4    [NC,L]
+RewriteRule    ^outcomes_pdf/([A-Z])/(.*)/(.*)/([A-Z0-9]+)?$    outcomes_pdf.php?type=$1&from=$2&to=$3&branch=$4    [NC,L]
+RewriteRule    ^bills_pdf/([A-Z])/(.*)/(.*)/([0-9]+)?$    bills_pdf.php?type=$1&from=$2&to=$3&branch=$4    [NC,L]
+RewriteRule    ^stores_pdf/([0-9]+)?$    stores_pdf.php?store=$1    [NC,L]
+RewriteRule    ^orders_pdf/([A-Z])/(.*)/(.*)/([0-9]+)?$    orders_pdf.php?type=$1&from=$2&to=$3&branch=$4    [NC,L]
+RewriteCond %{REQUEST_URI} ^/404/$
